@@ -185,10 +185,7 @@
     animation: admits-scroll 44s linear infinite;
   }
 
-  .admits-marquee:hover .admits-track,
-  .admits-marquee:focus-within .admits-track{
-    animation-play-state: paused;
-  }
+  
 
   @keyframes admits-scroll{
     from{ transform: translateX(0); }
@@ -971,5 +968,5 @@
 })();
 </script>
 
-</body>
+<script>(function(){var m=document.querySelector(.admits-marquee);if(!m||!m.getAnimations)return;var r=1,t=1;function f(){var a=m.querySelector(.admits-track).getAnimations()[0];if(!a)return requestAnimationFrame(f);r+=(t-r)*.08;a.playbackRate=r;requestAnimationFrame(f)}m.addEventListener(mouseenter,function(){t=.5});m.addEventListener(mouseleave,function(){t=1});f()})();</script></body>
 </html>
