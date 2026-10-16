@@ -640,8 +640,8 @@
   .team-frame{width:216px;margin:0 auto 1.1rem}
   .team-creds{text-align:left;margin:.8rem auto 0}
   .team-creds li{display:flex;align-items:center;gap:.75rem;padding:.55rem 0}
-  .cred-logo{width:28px;height:28px;flex:0 0 28px;object-fit:contain;border-radius:3px;filter:grayscale(1);opacity:.85;transition:filter .25s,opacity .25s}
-  .team-creds li:hover .cred-logo{filter:none;opacity:1}
+  .cred-logo{width:28px;height:28px;flex:0 0 28px;object-fit:contain;border-radius:3px;transition:transform .25s}
+  .team-creds li{transition:background .25s}.team-creds li:hover{background:rgba(110,31,31,.05)}.team-creds li:hover .cred-logo{transform:scale(1.12)}
   .steps-note{margin:2.2rem 0 0 3.45rem;font-size:inherit;line-height:inherit;color:var(--ink-soft)}
   @media (max-width:600px){.team-grid{grid-template-columns:minmax(0,1fr)}}
   html{scroll-behavior:smooth}
