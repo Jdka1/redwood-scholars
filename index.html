@@ -152,6 +152,7 @@
     margin: 0 0 0.8rem;
   }
 
+  .hero-sub{margin:.9rem 0 0;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.85}
   .hero-title{
     font-size: clamp(1.5rem, 5.5vw, 2.1rem);
     font-weight: 400;
@@ -225,6 +226,12 @@
     filter: none;
   }
 
+  .admits-list li{width:auto;gap:.6rem}
+  .admit-logo{width:auto;max-width:56px}
+  .admit-logo.admit-wide{max-width:136px}
+  .admit-name{font-family:var(--serif);font-variant-caps:small-caps;letter-spacing:.05em;font-size:.92rem;line-height:1;white-space:nowrap;color:var(--ink-soft);transition:color 250ms ease}
+  .admits-list li:hover .admit-logo{filter:none}
+  .admits-list li:hover .admit-name{color:var(--ink)}
   .admit-wordmark{
     width: auto;
     height: auto;
@@ -630,6 +637,7 @@
     <div class="wrap">
       <p class="label hero-label">College Admissions Coaching</p>
       <p class="hero-title">Direct guidance, from two people who just went through it.</p>
+      <p class="hero-sub">Founded by two Stanford students</p>
     </div>
   </div>
 </div>
@@ -641,36 +649,36 @@
   <div class="admits-marquee">
     <div class="admits-track">
       <ul class="admits-list">
-        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt="Stanford University"></li>
-        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt="UC Berkeley"></li>
-        <li><img class="admit-logo" src="assets/logos/vanderbilt.svg" alt="Vanderbilt University"></li>
-        <li><img class="admit-logo" src="assets/logos/rice.svg" alt="Rice University"></li>
-        <li><img class="admit-logo" src="assets/logos/cmu.svg" alt="Carnegie Mellon University"></li>
-        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt="Georgia Institute of Technology"></li>
-        <li><img class="admit-logo" src="assets/logos/bu.svg" alt="Boston University"></li>
-        <li><img class="admit-logo" src="assets/logos/usc.svg" alt="University of Southern California"></li>
-        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt="Purdue University"></li>
-        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt="Northeastern University"></li>
-        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt="NC State University"></li>
-        <li><img class="admit-logo" src="assets/logos/washu.svg" alt="Washington University in St. Louis"></li>
-        <li><img class="admit-logo" src="assets/logos/amherst.png" alt="Amherst College"></li>
-        <li><img class="admit-logo" src="assets/logos/cmc.svg" alt="Claremont McKenna College"></li>
+        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt="Stanford University"><span class="admit-name" aria-hidden="true">Stanford</span></li>
+        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt="UC Berkeley"><span class="admit-name" aria-hidden="true">UC Berkeley</span></li>
+        <li><img class="admit-logo" src="assets/logos/vanderbilt.svg" alt="Vanderbilt University"><span class="admit-name" aria-hidden="true">Vanderbilt</span></li>
+        <li><img class="admit-logo" src="assets/logos/rice.svg" alt="Rice University"><span class="admit-name" aria-hidden="true">Rice</span></li>
+        <li><img class="admit-logo admit-wide" src="assets/logos/cmu.svg" alt="Carnegie Mellon University"></li>
+        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt="Georgia Institute of Technology"><span class="admit-name" aria-hidden="true">Georgia Tech</span></li>
+        <li><img class="admit-logo" src="assets/logos/bu.svg" alt="Boston University"><span class="admit-name" aria-hidden="true">Boston University</span></li>
+        <li><img class="admit-logo" src="assets/logos/usc.svg" alt="University of Southern California"><span class="admit-name" aria-hidden="true">USC</span></li>
+        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt="Purdue University"><span class="admit-name" aria-hidden="true">Purdue</span></li>
+        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt="Northeastern University"><span class="admit-name" aria-hidden="true">Northeastern</span></li>
+        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt="NC State University"><span class="admit-name" aria-hidden="true">NC State</span></li>
+        <li><img class="admit-logo" src="assets/logos/washu.svg" alt="Washington University in St. Louis"><span class="admit-name" aria-hidden="true">WashU</span></li>
+        <li><img class="admit-logo" src="assets/logos/amherst.png" alt="Amherst College"><span class="admit-name" aria-hidden="true">Amherst</span></li>
+        <li><img class="admit-logo admit-wide" src="assets/logos/cmc.svg" alt="Claremont McKenna College"></li><li><img class="admit-logo" src="assets/logos/uw.svg" alt="University of Washington"><span class="admit-name" aria-hidden="true">Washington</span></li>
       </ul>
       <ul class="admits-list" aria-hidden="true">
-        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/vanderbilt.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/rice.svg" alt="Rice University"></li>
-        <li><img class="admit-logo" src="assets/logos/cmu.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/bu.svg" alt="Boston University"></li>
-        <li><img class="admit-logo" src="assets/logos/usc.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/washu.svg" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/amherst.png" alt=""></li>
-        <li><img class="admit-logo" src="assets/logos/cmc.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt=""><span class="admit-name" aria-hidden="true">Stanford</span></li>
+        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt=""><span class="admit-name" aria-hidden="true">UC Berkeley</span></li>
+        <li><img class="admit-logo" src="assets/logos/vanderbilt.svg" alt=""><span class="admit-name" aria-hidden="true">Vanderbilt</span></li>
+        <li><img class="admit-logo" src="assets/logos/rice.svg" alt="Rice University"><span class="admit-name" aria-hidden="true">Rice</span></li>
+        <li><img class="admit-logo admit-wide" src="assets/logos/cmu.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt=""><span class="admit-name" aria-hidden="true">Georgia Tech</span></li>
+        <li><img class="admit-logo" src="assets/logos/bu.svg" alt="Boston University"><span class="admit-name" aria-hidden="true">Boston University</span></li>
+        <li><img class="admit-logo" src="assets/logos/usc.svg" alt=""><span class="admit-name" aria-hidden="true">USC</span></li>
+        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt=""><span class="admit-name" aria-hidden="true">Purdue</span></li>
+        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt=""><span class="admit-name" aria-hidden="true">Northeastern</span></li>
+        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt=""><span class="admit-name" aria-hidden="true">NC State</span></li>
+        <li><img class="admit-logo" src="assets/logos/washu.svg" alt=""><span class="admit-name" aria-hidden="true">WashU</span></li>
+        <li><img class="admit-logo" src="assets/logos/amherst.png" alt=""><span class="admit-name" aria-hidden="true">Amherst</span></li>
+        <li><img class="admit-logo admit-wide" src="assets/logos/cmc.svg" alt=""></li><li><img class="admit-logo" src="assets/logos/uw.svg" alt=""><span class="admit-name" aria-hidden="true">Washington</span></li>
       </ul>
     </div>
   </div>
