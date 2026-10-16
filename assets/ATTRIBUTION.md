@@ -1,0 +1,1 @@
+Hero photo: Stanford University Main Quad May 2011 001.jpg by King of Hearts, via Wikimedia Commons, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Resized and compressed. No endorsement by Stanford University implied.

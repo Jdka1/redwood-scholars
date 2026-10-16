@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redwood Scholars | College Admissions Coaching</title>
+<meta name="description" content="Redwood Scholars offers direct, honest college admissions coaching for families, from advisors who recently went through the process themselves.">
+<style>
+
+  :root{
+    --paper: #f6f1e4;
+    --ink: #1a160f;
+    --ink-soft: #4a4336;
+    --accent: #6e1f1f;
+    --line: #cdc0a0;
+    --serif: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--accent); }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .skip-link{
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.25rem;
+    z-index: 100;
+  }
+  .skip-link:focus{
+    left: 0;
+    top: 0;
+  }
+
+  .wrap{
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .label{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Masthead ---------- */
+
+  header.site-head{
+    border-top: 3px double var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding: 1.4rem 0 1.3rem;
+  }
+
+  .masthead-label{
+    margin: 0 0 0.8rem;
+  }
+
+  .masthead-title{
+    font-size: clamp(1.7rem, 6vw, 2.3rem);
+    font-weight: 400;
+    margin: 0 0 0.9rem;
+    letter-spacing: 0.01em;
+  }
+
+  nav.site-nav{
+    border-top: 1px solid var(--line);
+    padding-top: 0.9rem;
+  }
+
+  nav.site-nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav.site-nav a{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+
+  nav.site-nav a:hover,
+  nav.site-nav a:focus-visible{
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    position: relative;
+    line-height: 0;
+  }
+
+  .hero img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+  }
+
+  .hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 22, 15, 0.8);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-overlay .wrap{
+    line-height: 1.65;
+  }
+
+  .hero-label{
+    color: var(--line);
+    margin: 0 0 0.8rem;
+  }
+
+  .hero-title{
+    font-size: clamp(1.5rem, 5.5vw, 2.1rem);
+    font-weight: 400;
+    color: var(--paper);
+    margin: 0;
+  }
+
+  /* ---------- Admitted to ---------- */
+
+  .admits{
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .admits-label{
+    margin: 0 0 1rem;
+    text-align: center;
+  }
+
+  .admits-marquee{
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .admits-track{
+    display: flex;
+    width: max-content;
+    animation: admits-scroll 44s linear infinite;
+  }
+
+  .admits-marquee:hover .admits-track,
+  .admits-marquee:focus-within .admits-track{
+    animation-play-state: paused;
+  }
+
+  @keyframes admits-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  .admits-list{
+    list-style: none;
+    margin: 0;
+    padding: 0 2.2rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    flex-shrink: 0;
+  }
+
+  .admits-list li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 136px;
+    height: 34px;
+  }
+
+  .admit-logo{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.4);
+    transition: filter 250ms ease;
+  }
+
+  .admit-logo:hover{
+    filter: none;
+  }
+
+  .admit-wordmark{
+    width: auto;
+    height: auto;
+    font-family: var(--serif);
+    font-variant-caps: small-caps;
+    letter-spacing: 0.05em;
+    font-size: 0.92rem;
+    line-height: 1;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    filter: none;
+    transition: color 250ms ease;
+  }
+
+  .admit-wordmark:hover{
+    color: var(--ink);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .admits-marquee{
+      overflow: visible;
+      -webkit-mask-image: none;
+      mask-image: none;
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .admits-track{
+      display: block;
+      animation: none;
+      width: auto;
+    }
+    .admits-track .admits-list{
+      width: 100%;
+      flex-shrink: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+      row-gap: 1rem;
+    }
+    .admits-track .admits-list[aria-hidden="true"]{
+      display: none;
+    }
+  }
+
+  /* ---------- Section scaffolding ---------- */
+
+  section{
+    padding: 2.8rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sec-head{
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .sec-no{
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  h2{
+    font-weight: 400;
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin: 0;
+  }
+
+  h3{
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  p{ margin: 0 0 1rem; }
+
+  section p:last-child{ margin-bottom: 0; }
+
+  .intro{
+    font-size: 1.05rem;
+  }
+
+  /* ---------- Placeholder ---------- */
+
+  .placeholder{
+    display: inline-block;
+    color: var(--accent);
+    font-style: italic;
+    border-bottom: 1px dotted var(--accent);
+  }
+
+  p .placeholder{
+    display: block;
+    margin: 0.4rem 0 1rem;
+  }
+
+  /* ---------- Credentials list ---------- */
+
+  .creds{
+    list-style: none;
+    margin: 1.2rem 0;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .creds li{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.45rem 0;
+  }
+
+  .creds li + li{
+    border-top: 1px solid var(--line);
+  }
+
+  .creds .org{
+    font-weight: 700;
+  }
+
+  .creds .role{
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  /* ---------- Numbered steps ---------- */
+
+  .steps{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .step{
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.9rem;
+    padding: 1rem 0;
+  }
+
+  .step + .step{
+    border-top: 1px solid var(--line);
+  }
+
+  .step-no{
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.1rem;
+  }
+
+  .step p{ margin: 0; color: var(--ink-soft); }
+
+  /* ---------- Plain lists ---------- */
+
+  ul.plain{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul.plain li{
+    padding: 0.7rem 0;
+    color: var(--ink-soft);
+  }
+
+  ul.plain li + li{
+    border-top: 1px solid var(--line);
+  }
+
+  ul.plain li strong{
+    color: var(--ink);
+  }
+
+  /* ---------- Team ---------- */
+
+  .team-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px){
+    .team-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team-photo{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center center;
+    border: 1px solid var(--line);
+    margin: 0 0 0.9rem;
+    background: var(--paper);
+  }
+
+  .team-photo-placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .team-name{
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 0.1rem;
+  }
+
+  .team-role{
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 0 0.7rem;
+  }
+
+  .team-creds{
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .team-creds li{
+    padding: 0.4rem 0;
+  }
+
+  .team-creds li + li{
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- FAQ ---------- */
+
+  .faq-item{
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-item:last-of-type{
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-trigger{
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.9rem 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .faq-trigger:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .faq-icon{
+    position: relative;
+    flex-shrink: 0;
+    width: 0.8em;
+    height: 1em;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.8em;
+    height: 0;
+    border-top: 2px solid var(--accent);
+    transform-origin: center;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .faq-icon::after{
+    transform: rotate(90deg);
+  }
+
+  .faq-trigger[aria-expanded="true"] .faq-icon::after{
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  .faq-answer{
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    color: var(--ink-soft);
+    transition: height 220ms ease, opacity 220ms ease;
+  }
+
+  .faq-answer p{
+    margin: 0;
+    padding: 0 0 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .faq-icon::before,
+    .faq-icon::after{
+      transition: none;
+    }
+    .faq-answer{
+      transition: none;
+    }
+  }
+
+  /* ---------- Buttons / links ---------- */
+
+  .btn{
+    display: inline-block;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--ink);
+  }
+
+  .btn:hover,
+  .btn:focus-visible{
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .text-link{
+    color: var(--ink);
+    text-underline-offset: 3px;
+  }
+
+  .text-link:hover,
+  .text-link:focus-visible{
+    color: var(--accent);
+  }
+
+  .cta-actions{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem 1.6rem;
+    margin-top: 1.3rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    padding: 2rem 0 2.6rem;
+  }
+
+  footer p{
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  footer p + p{
+    margin-top: 0.5rem;
+  }
+
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <p class="label masthead-label">College Admissions Coaching</p>
+    <p class="masthead-title">Redwood Scholars</p>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="assets/hero-quad.jpg" alt="Stanford University's Main Quad">
+  <div class="hero-overlay">
+    <div class="wrap">
+      <p class="label hero-label">College Admissions Coaching</p>
+      <p class="hero-title">Direct guidance, from two people who just went through it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="admits">
+  <div class="wrap">
+    <p class="label admits-label">Our team admits</p>
+  </div>
+  <div class="admits-marquee">
+    <div class="admits-track">
+      <ul class="admits-list">
+        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt="Stanford University"></li>
+        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt="UC Berkeley"></li>
+        <li><img class="admit-logo" src="assets/logos/vanderbilt.png" alt="Vanderbilt University"></li>
+        <li><span class="admit-logo admit-wordmark">Rice University</span></li>
+        <li><img class="admit-logo" src="assets/logos/cmu.svg" alt="Carnegie Mellon University"></li>
+        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt="Georgia Institute of Technology"></li>
+        <li><span class="admit-logo admit-wordmark">Boston University</span></li>
+        <li><img class="admit-logo" src="assets/logos/usc.svg" alt="University of Southern California"></li>
+        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt="Purdue University"></li>
+        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt="Northeastern University"></li>
+        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt="NC State University"></li>
+        <li><img class="admit-logo" src="assets/logos/washu.png" alt="Washington University in St. Louis"></li>
+        <li><img class="admit-logo" src="assets/logos/amherst.svg" alt="Amherst College"></li>
+        <li><img class="admit-logo" src="assets/logos/cmc.svg" alt="Claremont McKenna College"></li>
+      </ul>
+      <ul class="admits-list" aria-hidden="true">
+        <li><img class="admit-logo" src="assets/logos/stanford.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/berkeley.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/vanderbilt.png" alt=""></li>
+        <li><span class="admit-logo admit-wordmark">Rice University</span></li>
+        <li><img class="admit-logo" src="assets/logos/cmu.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/georgia-tech.svg" alt=""></li>
+        <li><span class="admit-logo admit-wordmark">Boston University</span></li>
+        <li><img class="admit-logo" src="assets/logos/usc.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/purdue.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/northeastern.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/nc-state.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/washu.png" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/amherst.svg" alt=""></li>
+        <li><img class="admit-logo" src="assets/logos/cmc.svg" alt=""></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">I.</span>
+        <h2>Who We Are</h2>
+      </div>
+
+      <p class="intro">We are Aryan Mehra and Izzy Fine. We work directly with your son or daughter on their college application, from the first conversation through submission. There is no associate or junior coach standing in for us.</p>
+
+      <ul class="creds" aria-label="Background">
+        <li><span class="org">Stanford University</span><span class="role">B.S. student</span></li>
+        <li><span class="org">The Nueva School</span><span class="role">graduate</span></li>
+        <li><span class="org">Palantir</span><span class="role">Forward Deployed AI Engineer</span></li>
+        <li><span class="org">8VC</span><span class="role">Engineering Fellow, 2026</span></li>
+        <li><span class="org">Sauron</span><span class="role">Machine Learning Engineer Intern</span></li>
+      </ul>
+
+      <p>We did not come to this as career coaches. We went through the application process ourselves not long ago, and we remember how hard it was to find guidance that felt honest rather than sold to us. We take on a small number of students at a time so that we can give each one real attention.</p>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">II.</span>
+        <h2>The Team</h2>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img class="team-photo" src="assets/izzy-fine.jpg" alt="Izzy Fine">
+          <p class="team-name">Izzy Fine</p>
+          <p class="team-role">Co-founder</p>
+          <ul class="team-creds">
+            <li>Stanford University &mdash; Economics and International Relations</li>
+            <li>Analyst, Charles R. Blyth Fund (student-run)</li>
+            <li>Private Equity Intern, Golden Gate Global</li>
+            <li>Private Equity Analyst, Bregal Sagemount</li>
+            <li>Investment Intern, Community Capital New York</li>
+          </ul>
+        </div>
+
+        <div class="team-member">
+          <img class="team-photo" src="assets/aryan-mehra.jpg" alt="Aryan Mehra">
+          <p class="team-name">Aryan Mehra</p>
+          <ul class="team-creds">
+            <li>Stanford University &mdash; B.S. student</li>
+            <li>The Nueva School &mdash; graduate</li>
+            <li>Palantir &mdash; Forward Deployed AI Engineer</li>
+            <li>8VC &mdash; Engineering Fellow, 2026</li>
+            <li>Sauron &mdash; Machine Learning Engineer Intern</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">III.</span>
+        <h2>How the Process Works</h2>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-no">1</span>
+          <div>
+            <h3>An initial conversation</h3>
+            <p>You and the student tell us where things stand, what schools are on your mind, and what you are hoping to get out of working together.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-no">2</span>
+          <div>
+            <h3>A written plan</h3>
+            <p>We put together an assessment of the student's record and interests, along with a realistic school list and a rough timeline.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-no">3</span>
+          <div>
+            <h3>Regular sessions with the student</h3>
+            <p>We meet throughout the year to work on essays, activities, and the application itself. We read drafts and respond with direct feedback.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-no">4</span>
+          <div>
+            <h3>A final review</h3>
+            <p>Before anything is submitted, we go through the full application together to make sure it is complete, accurate, and ready.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="receive">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">IV.</span>
+        <h2>What You Can Expect</h2>
+      </div>
+
+      <ul class="plain">
+        <li><strong>Direct access to us.</strong> Not a platform, and not a team of associates working on your student's file.</li>
+        <li><strong>A written plan early on,</strong> so you know what we are working toward and why.</li>
+        <li><strong>Honest, specific feedback,</strong> rather than reassurance for its own sake.</li>
+        <li><strong>A deliberately small roster,</strong> so the student has our real attention rather than a fraction of it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="expected">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">V.</span>
+        <h2>What Is Expected of the Student</h2>
+      </div>
+
+      <p>This only works if the student does the work. We ask that they:</p>
+
+      <ul class="plain">
+        <li>Write their own essays, from the first draft to the last.</li>
+        <li>Come to sessions prepared, having done the reading or thinking we agreed on.</li>
+        <li>Be honest with us about their grades, their time, and what they actually want, even when it is inconvenient to say.</li>
+      </ul>
+
+      <p>We are there to guide the student and to push back when it is warranted, not to do the work for them.</p>
+    </div>
+  </section>
+
+  <section id="communication">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">VI.</span>
+        <h2>Communication With You</h2>
+      </div>
+
+      <p>You are paying for this, and you deserve to know what is happening throughout. We send you a short written update after each stage of the process, and we are glad to get on a call whenever you would like one.</p>
+
+      <p>We do not keep the student's progress from you. If the student asks us to treat something as private between us, we will tell you that much, and nothing more.</p>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">VII.</span>
+        <h2>A Note on Outcomes</h2>
+      </div>
+
+      <p>We want to be plain about this. We cannot promise admission anywhere, and we would be wary of anyone who does. What we can promise is that we will work closely and honestly with your student to put together the strongest application they are capable of.</p>
+
+      <span class="placeholder">[OUTCOMES: add real, verified results here]</span>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">VIII.</span>
+        <h2>Questions Parents Ask</h2>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1" id="faq-trigger-1">
+          Does the student write their own essays?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+          <p>Yes. We read every draft and give direct feedback, but we do not write or rewrite essays for students.</p>
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-trigger-3">
+          How much does this cost?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+          <p><span class="placeholder">[PRICE or Book a call]</span></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4" id="faq-trigger-4">
+          How do we get started?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+          <p>Write to us at <span class="placeholder">[CONTACT EMAIL]</span> and tell us a little about the student and what you are looking for. We will write back and find a time to talk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">IX.</span>
+        <h2>Getting in Touch</h2>
+      </div>
+
+      <p>If you would like to talk about your student's application, we would like to hear from you. No pressure and no pitch, just a conversation about where things stand.</p>
+
+      <div class="cta-actions">
+        <a class="btn" href="mailto:[CONTACT EMAIL]">[PRICE or Book a call]</a>
+        <span class="placeholder">[CONTACT EMAIL]</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Redwood Scholars, operated by Aryan Mehra and Izzy Fine &middot; 2026</p>
+    <p>Photo: King of Hearts, CC BY-SA 3.0, Wikimedia Commons. Not affiliated with or endorsed by Stanford University.</p>
+    <p>School names and logos are trademarks of their respective institutions. Not affiliated with or endorsed by them.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function openPanel(panel, btn){
+    panel.hidden = false;
+    if (reduceMotion) {
+      panel.style.height = "auto";
+      panel.style.opacity = "1";
+    } else {
+      panel.style.height = "0px";
+      panel.style.opacity = "0";
+      requestAnimationFrame(function(){
+        panel.style.height = panel.scrollHeight + "px";
+        panel.style.opacity = "1";
+      });
+      panel.addEventListener("transitionend", function onEnd(e){
+        if (e.propertyName === "height") {
+          panel.style.height = "auto";
+          panel.removeEventListener("transitionend", onEnd);
+        }
+      });
+    }
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closePanel(panel, btn){
+    btn.setAttribute("aria-expanded", "false");
+    if (reduceMotion) {
+      panel.style.height = "0px";
+      panel.style.opacity = "0";
+      panel.hidden = true;
+    } else {
+      panel.style.height = panel.scrollHeight + "px";
+      requestAnimationFrame(function(){
+        panel.style.height = "0px";
+        panel.style.opacity = "0";
+      });
+      panel.addEventListener("transitionend", function onEnd(e){
+        if (e.propertyName === "height") {
+          panel.hidden = true;
+          panel.removeEventListener("transitionend", onEnd);
+        }
+      });
+    }
+  }
+
+  document.querySelectorAll(".faq-trigger").forEach(function(btn){
+    var panel = document.getElementById(btn.getAttribute("aria-controls"));
+    btn.addEventListener("click", function(){
+      var isOpen = btn.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        closePanel(panel, btn);
+      } else {
+        openPanel(panel, btn);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
