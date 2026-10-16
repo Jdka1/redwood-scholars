@@ -460,6 +460,12 @@
   .step:last-child::before{display:none}
   .step-no{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;box-sizing:border-box;border:1px solid var(--accent);border-radius:50%;background:var(--paper);font-size:1rem;line-height:1}
   .step h3{margin-top:.35rem}
+  .faq-group-title{margin:2.4rem 0 .5rem;font-size:.78rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .faq-group:first-of-type .faq-group-title{margin-top:1.6rem}
+  .mail{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  .hero-btn{display:inline-block;margin-top:1.4rem;padding:.7rem 1.4rem;border:1px solid var(--paper);color:var(--paper);text-decoration:none;font-weight:700;font-size:.95rem;letter-spacing:.04em;transition:background .2s,color .2s}
+  .hero-btn:hover,.hero-btn:focus-visible{background:var(--paper);color:var(--ink)}
+  footer .mail{color:inherit}
   .team-frame{position:relative;overflow:hidden;width:176px;max-width:100%;aspect-ratio:1/1;box-sizing:border-box;border:1px solid var(--line);margin:0 0 1.1rem;background:var(--paper)}
   .team-frame::after{content:"";position:absolute;inset:0;background:rgba(214,186,140,.16);mix-blend-mode:multiply;pointer-events:none}
   .team-frame .team-photo{display:block;border:0;margin:0;width:100%;height:100%;transform-origin:0 0;filter:sepia(.25) saturate(.78) contrast(.94) brightness(1.03)}
@@ -658,6 +664,7 @@
       <p class="label hero-label">College Admissions Coaching</p>
       <p class="hero-title">Direct guidance, from two people who just went through it.</p>
       <p class="hero-sub">Founded by two Stanford students</p>
+      <a class="hero-btn" href="mailto:arymehr@stanford.edu,izzfine@stanford.edu?subject=Free%20intro%20call">Book a free intro call</a>
     </div>
   </div>
 </div>
@@ -860,6 +867,8 @@
         <h2>Questions Parents Ask</h2>
       </div>
 
+      <div class="faq-group">
+        <h3 class="faq-group-title">Working Together</h3>
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1" id="faq-trigger-1">
           Does the student write their own essays?
@@ -869,38 +878,6 @@
           <p>Yes. We read every draft and give direct feedback, but we do not write or rewrite essays for students.</p>
         </div>
       </div>
-
-
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-5" id="faq-trigger-5">
-          Can we meet before committing?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-trigger-5" hidden>
-          <p>Yes. We start with a free intro conversation where you and your student tell us where things stand and ask us anything. We tell you honestly whether we are a good fit.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-6" id="faq-trigger-6">
-          What grades or years do you work with?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-trigger-6" hidden>
-          <p>We work with students and their families on college applications. If you are not sure whether we are a good fit for your student&rsquo;s grade or situation, ask us on the free intro call and we will give you a straight answer.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-7" id="faq-trigger-7">
-          How often will my student meet with you?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-trigger-7" hidden>
-          <p>We meet with the student weekly or every other week, and session length fits the student&rsquo;s needs. On the free intro call we talk about what schedule makes sense for your student.</p>
-        </div>
-      </div>
-
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-8" id="faq-trigger-8">
           What is a typical session like?
@@ -910,17 +887,15 @@
           <p>The student brings drafts, and we brainstorm essays, shape their activities list, and work through each application together. We give specific written feedback on every draft.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-9" id="faq-trigger-9">
-          How do you decide which colleges to apply to?
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-7" id="faq-trigger-7">
+          How often will my student meet with you?
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-trigger-9" hidden>
-          <p>We review the student&rsquo;s grades, activities, and interests, then give you a realistic school list as part of the written plan. You see it before we begin regular work.</p>
+        <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-trigger-7" hidden>
+          <p>We meet with the student weekly or every other week, and session length fits the student&rsquo;s needs. On the free intro call we talk about what schedule makes sense for your student.</p>
         </div>
       </div>
-
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-10" id="faq-trigger-10">
           How involved are parents?
@@ -930,7 +905,28 @@
           <p>Parents are welcome to ask questions along the way, and we keep you in the loop. The student makes the final decisions and submits their own application.</p>
         </div>
       </div>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-9" id="faq-trigger-9">
+          How do you decide which colleges to apply to?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-trigger-9" hidden>
+          <p>We review the student&rsquo;s grades, activities, and interests, then give you a realistic school list as part of the written plan. You see it before we begin regular work.</p>
+        </div>
+      </div>
+      </div>
 
+      <div class="faq-group">
+        <h3 class="faq-group-title">Fit and Expectations</h3>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-6" id="faq-trigger-6">
+          What grades or years do you work with?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-trigger-6" hidden>
+          <p>We work with students and their families on college applications. If you are not sure whether we are a good fit for your student&rsquo;s grade or situation, ask us on the free intro call and we will give you a straight answer.</p>
+        </div>
+      </div>
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-11" id="faq-trigger-11">
           Do you guarantee admission?
@@ -940,7 +936,19 @@
           <p>No. Nobody can honestly promise an admissions result, and we will not. We focus on helping each student reach the best outcome they can.</p>
         </div>
       </div>
+      </div>
 
+      <div class="faq-group">
+        <h3 class="faq-group-title">Getting Started</h3>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-5" id="faq-trigger-5">
+          Can we meet before committing?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+          <p>Yes. We start with a free intro conversation where you and your student tell us where things stand and ask us anything. We tell you honestly whether we are a good fit.</p>
+        </div>
+      </div>
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-trigger-3">
           How much does this cost?
@@ -950,16 +958,17 @@
           <p><span class="placeholder">[PRICE or Book a call]</span></p>
         </div>
       </div>
-
       <div class="faq-item">
         <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4" id="faq-trigger-4">
           How do we get started?
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-trigger-4" hidden>
-          <p>Write to us at <span class="placeholder">[CONTACT EMAIL]</span> and tell us a little about the student and what you are looking for. We will write back and find a time to talk.</p>
+          <p>Write to us at <a class="mail" href="mailto:arymehr@stanford.edu">arymehr@stanford.edu</a> (Aryan) or <a class="mail" href="mailto:izzfine@stanford.edu">izzfine@stanford.edu</a> (Izzy) and tell us a little about the student and what you are looking for. We will write back and find a time to talk.</p>
         </div>
       </div>
+      </div>
+
     </div>
   </section>
 
@@ -973,8 +982,8 @@
       <p>If you would like to talk about your student's application, we would like to hear from you. No pressure and no pitch. It is a conversation about where things stand.</p>
 
       <div class="cta-actions">
-        <a class="btn" href="mailto:[CONTACT EMAIL]">[PRICE or Book a call]</a>
-        <span class="placeholder">[CONTACT EMAIL]</span>
+        <a class="btn" href="mailto:arymehr@stanford.edu,izzfine@stanford.edu">[PRICE or Book a call]</a>
+        <span><a class="mail" href="mailto:arymehr@stanford.edu">arymehr@stanford.edu</a> &middot; <a class="mail" href="mailto:izzfine@stanford.edu">izzfine@stanford.edu</a></span>
       </div>
     </div>
   </section>
@@ -983,6 +992,7 @@
 
 <footer>
   <div class="wrap">
+    <p>Contact: <a class="mail" href="mailto:arymehr@stanford.edu">arymehr@stanford.edu</a> &middot; <a class="mail" href="mailto:izzfine@stanford.edu">izzfine@stanford.edu</a></p>
     <p>Redwood Scholars, operated by Aryan Mehra and Izzy Fine &middot; 2026</p>
     <p>Photo: King of Hearts, CC BY-SA 3.0, Wikimedia Commons. Not affiliated with or endorsed by Stanford University.</p>
     <p>School names and logos are trademarks of their respective institutions. Not affiliated with or endorsed by them.</p>
