@@ -441,6 +441,9 @@
     color: var(--accent);
     font-style: italic;
   }
+  .duo{position:relative;max-width:560px;margin:2rem 0 0;border:1px solid var(--line);box-sizing:border-box;background:var(--paper)}
+  .duo::after{content:"";position:absolute;inset:0;background:rgba(214,186,140,.16);mix-blend-mode:multiply;pointer-events:none}
+  .duo img{display:block;width:100%;height:auto;filter:sepia(.25) saturate(.78) contrast(.94) brightness(1.03)}
   .team-frame{position:relative;overflow:hidden;width:176px;max-width:100%;aspect-ratio:1/1;box-sizing:border-box;border:1px solid var(--line);margin:0 0 1.1rem;background:var(--paper)}
   .team-frame::after{content:"";position:absolute;inset:0;background:rgba(214,186,140,.16);mix-blend-mode:multiply;pointer-events:none}
   .team-frame .team-photo{display:block;border:0;margin:0;width:100%;height:100%;transform-origin:0 0;filter:sepia(.25) saturate(.78) contrast(.94) brightness(1.03)}
@@ -697,6 +700,8 @@
       <p class="intro">We help students and their families with college applications. We&rsquo;re Aryan and Izzy, two Stanford students, and we work directly with your son or daughter from the first conversation through submission. There is no associate or junior coach standing in for us.</p>
 
       <p>We did not come to this as career coaches. We went through the application process ourselves not long ago, and we remember how hard it was to find guidance that felt honest rather than sold to us. We take on a small number of students at a time so that we can give each one real attention.</p>
+
+      <div class="duo"><img src="assets/redwood-izzy-aryan.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200"></div>
     </div>
   </section>
 
