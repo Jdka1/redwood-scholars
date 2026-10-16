@@ -441,9 +441,10 @@
     color: var(--accent);
     font-style: italic;
   }
-
-  .team-photo[src*="aryan"]{object-position:30% 25%}
-  .team-photo[src*="izzy"]{object-position:50% 30%}
+  .team-frame{overflow:hidden;aspect-ratio:1/1;border:1px solid var(--line);margin:0 0 .9rem;background:var(--paper)}
+  .team-frame .team-photo{border:0;margin:0;height:100%;transform-origin:0 0}
+  .team-frame .team-photo[src*="aryan"]{transform:translate(-13%,0) scale(1.44)}
+  .team-frame .team-photo[src*="izzy"]{transform:translate(-14%,0) scale(1.25)}
   .team-name{
     font-weight: 700;
     font-size: 1.05rem;
@@ -692,7 +693,7 @@
         <h2>Who We Are</h2>
       </div>
 
-      <p class="intro">We are Aryan Mehra and Izzy Fine. We work directly with your son or daughter on their college application, from the first conversation through submission. There is no associate or junior coach standing in for us.</p>
+      <p class="intro">We help students and their families with college applications. We&rsquo;re Aryan and Izzy, two Stanford students, and we work directly with your son or daughter from the first conversation through submission. There is no associate or junior coach standing in for us.</p>
 
       <ul class="creds" aria-label="Background">
         <li><span class="org">Stanford University</span><span class="role">B.S. student</span></li>
@@ -716,7 +717,7 @@
       <div class="team-grid">
 
         <div class="team-member">
-          <img class="team-photo" src="assets/aryan-mehra.jpg" alt="Aryan Mehra">
+          <div class="team-frame"><img class="team-photo" src="assets/aryan-mehra.jpg" alt="Aryan Mehra"></div>
           <p class="team-name">Aryan Mehra</p>
           <ul class="team-creds">
             <li>Stanford University &mdash; B.S. student</li>
@@ -727,7 +728,7 @@
           </ul>
         </div>
         <div class="team-member">
-          <img class="team-photo" src="assets/izzy-fine.jpg" alt="Izzy Fine">
+          <div class="team-frame"><img class="team-photo" src="assets/izzy-fine.jpg" alt="Izzy Fine"></div>
           <p class="team-name">Izzy Fine</p>
           <ul class="team-creds">
             <li>Stanford University &mdash; Economics and International Relations</li>
