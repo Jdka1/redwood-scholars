@@ -635,13 +635,36 @@
     margin-top: 0.5rem;
   }
 
+  .team-grid{grid-template-columns:repeat(2,minmax(0,330px));justify-content:center;gap:2.5rem 3.5rem}
+  .team-member{text-align:center}
+  .team-frame{width:216px;margin:0 auto 1.1rem}
+  .team-creds{text-align:left;margin:.8rem auto 0}
+  .team-creds li{display:flex;align-items:center;gap:.75rem;padding:.55rem 0}
+  .cred-logo{width:28px;height:28px;flex:0 0 28px;object-fit:contain;border-radius:3px;filter:grayscale(1);opacity:.85;transition:filter .25s,opacity .25s}
+  .team-creds li:hover .cred-logo{filter:none;opacity:1}
+  .steps-note{margin:2.2rem 0 0 3.45rem;font-size:inherit;line-height:inherit;color:var(--ink-soft)}
+  @media (max-width:600px){.team-grid{grid-template-columns:minmax(0,1fr)}}
+  html{scroll-behavior:smooth}
+  section[id]{scroll-margin-top:70px}
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-100%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}
+  .topbar.on{transform:none;visibility:visible;transition:transform .3s ease}
+  .topbar-in{max-width:1040px;margin:0 auto;padding:.6rem 1.5rem;display:flex;align-items:center;gap:1.6rem;box-sizing:border-box}
+  .topbar-mark{font-size:1.1rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .topbar-links{display:flex;gap:1.3rem;margin-left:auto}
+  .topbar-links a{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;padding:.2rem 0;border-bottom:1px solid transparent}
+  .topbar-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .topbar-btn{font-size:.82rem;font-weight:700;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:.4rem .9rem;white-space:nowrap}
+  .topbar-btn:hover{background:var(--ink);color:var(--paper)}
+  @media (max-width:860px){.topbar-links{display:none}.topbar-btn{margin-left:auto}.topbar-in{padding:.5rem 1rem}.topbar-mark{font-size:1rem}}
 </style>
 </head>
 <body>
+<div class="topbar" id="topbar"><div class="topbar-in"><a class="topbar-mark" href="#top">Redwood Scholars</a><nav class="topbar-links" aria-label="Sections"><a href="#about">Who We Are</a><a href="#team">Team</a><a href="#process">Process</a><a href="#receive">What to Expect</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="topbar-btn" href="mailto:arymehr@stanford.edu,izzfine@stanford.edu?subject=Free%20intro%20call">Book a free intro call</a></div></div>
+
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-head">
+<header id="top" class="site-head">
   <div class="wrap">
     <p class="label masthead-label">College Admissions Coaching</p>
     <p class="masthead-title">Redwood Scholars</p>
@@ -722,7 +745,7 @@
 
       <p>We are not career coaches. We went through the application process ourselves not long ago, and we remember how hard it was to find guidance that felt honest. We take on a small number of students at a time so that we can give each one real attention.</p>
 
-      <div class="gal"><div class="gal-track"><img src="assets/gallery/gallery-3.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200"><img src="assets/gallery/gallery-1.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"><img src="assets/gallery/gallery-4.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"><img src="assets/gallery/gallery-2.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"></div><button class="gal-btn prev" aria-label="Previous photo">&lsaquo;</button><button class="gal-btn next" aria-label="Next photo">&rsaquo;</button><div class="gal-dots"></div></div>
+      <div class="gal"><div class="gal-track"><img src="assets/gallery/gallery-3.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200"><img src="assets/gallery/gallery-5.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"><img src="assets/gallery/gallery-1.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"><img src="assets/gallery/gallery-4.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"><img src="assets/gallery/gallery-2.jpg" alt="Aryan Mehra and Izzy Fine" width="1600" height="1200" loading="lazy"></div><button class="gal-btn prev" aria-label="Previous photo">&lsaquo;</button><button class="gal-btn next" aria-label="Next photo">&rsaquo;</button><div class="gal-dots"></div></div>
     </div>
   </section>
 
@@ -736,25 +759,25 @@
       <div class="team-grid">
 
         <div class="team-member">
-          <div class="team-frame"><div class="team-frame"><img class="team-photo" src="assets/aryan-mehra.jpg" alt="Aryan Mehra"></div></div>
+          <div class="team-frame"><img class="team-photo" src="assets/aryan-mehra.jpg" alt="Aryan Mehra"></div>
           <p class="team-name">Aryan Mehra</p>
           <ul class="team-creds">
-            <li>Stanford University, B.S. student</li>
-            <li>The Nueva School, graduate</li>
-            <li>Palantir, Forward Deployed AI Engineer</li>
-            <li>8VC, Engineering Fellow, 2026</li>
-            <li>Sauron, Machine Learning Engineer Intern</li>
+            <li><img class="cred-logo" src="assets/team-logos/../logos/stanford.svg" alt="Stanford University" loading="lazy"><span>Stanford University, Computer Science</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/nueva.png" alt="The Nueva School" loading="lazy"><span>The Nueva School, graduate</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/palantir.png" alt="Palantir" loading="lazy"><span>Palantir, Forward Deployed AI Engineer</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/8vc.png" alt="8VC" loading="lazy"><span>8VC, Engineering Fellow, 2026</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/sauron.png" alt="Sauron" loading="lazy"><span>Sauron, Machine Learning Engineer Intern</span></li>
           </ul>
         </div>
         <div class="team-member">
-          <div class="team-frame"><div class="team-frame"><img class="team-photo" src="assets/izzy-fine.jpg" alt="Izzy Fine"></div></div>
+          <div class="team-frame"><img class="team-photo" src="assets/izzy-fine.jpg" alt="Izzy Fine"></div>
           <p class="team-name">Izzy Fine</p>
           <ul class="team-creds">
-            <li>Stanford University, Economics and International Relations</li>
-            <li>Analyst, Charles R. Blyth Fund (student-run)</li>
-            <li>Private Equity Intern, Golden Gate Global</li>
-            <li>Private Equity Analyst, Bregal Sagemount</li>
-            <li>Investment Intern, Community Capital New York</li>
+            <li><img class="cred-logo" src="assets/team-logos/../logos/stanford.svg" alt="Stanford University" loading="lazy"><span>Stanford University, Economics</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/blyth.png" alt="Stanford Blyth Fund" loading="lazy"><span>Analyst, Charles R. Blyth Fund (student-run)</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/ggg.png" alt="Golden Gate Global" loading="lazy"><span>Private Equity Intern, Golden Gate Global</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/sagemount.png" alt="Bregal Sagemount" loading="lazy"><span>Private Equity Analyst, Bregal Sagemount</span></li>
+            <li><img class="cred-logo" src="assets/team-logos/ccny.png" alt="Community Capital New York" loading="lazy"><span>Investment Intern, Community Capital New York</span></li>
           </ul>
         </div>
       </div>
@@ -808,7 +831,7 @@
         </li>
       </ol>
 
-      <p>The student&rsquo;s voice stays their own. We guide and give feedback, and we never write essays for students.</p>
+      <p class="steps-note">The student&rsquo;s voice stays their own. We guide and give feedback, and we never write essays for students.</p>
     </div>
   </section>
 
@@ -1065,5 +1088,6 @@ for(var k=0;k<im.length;k++){(function(k){var b=document.createElement('button')
 function go(n){n=Math.max(0,Math.min(im.length-1,n));t.scrollTo({left:n*t.clientWidth,behavior:'smooth'})}
 function mark(){i=Math.round(t.scrollLeft/t.clientWidth);var b=d.children;for(var k=0;k<b.length;k++)b[k].className=k==i?'on':''}
 t.addEventListener('scroll',mark);g.querySelector('.prev').onclick=function(){go(i-1)};g.querySelector('.next').onclick=function(){go(i+1)};mark()})();</script>
+<script>(function(){var b=document.getElementById('topbar'),h=document.querySelector('.hero');function u(){var e=h?h.getBoundingClientRect().bottom:200;b.classList.toggle('on',e<0)}addEventListener('scroll',u,{passive:true});u()})();</script>
 </body>
 </html>
